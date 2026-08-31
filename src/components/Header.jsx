@@ -72,7 +72,7 @@ export function Header({
             <input
               id="game-search-input"
               type="text"
-              placeholder="Search 1,200+ games, categories, tags..."
+              placeholder="Search games, categories, tags..."
               value={searchQuery}
               onChange={e => onSearchChange(e.target.value)}
               className="w-full bg-white/5 border border-white/10 rounded-full pl-10 pr-10 py-2.5 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"

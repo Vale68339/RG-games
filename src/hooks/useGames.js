@@ -1,10 +1,10 @@
 import { useState, useEffect, useMemo } from 'react';
 import { defaultGamesList } from '../data/defaultGames.js';
 
-const STORAGE_KEY = 'unblocked_games_data_v1';
-const FAVORITES_KEY = 'unblocked_games_favs_v1';
-const RECENTS_KEY = 'unblocked_games_recents_v1';
-const RATINGS_KEY = 'unblocked_games_ratings_v1';
+const STORAGE_KEY = 'unblocked_games_data_v2';
+const FAVORITES_KEY = 'unblocked_games_favs_v2';
+const RECENTS_KEY = 'unblocked_games_recents_v2';
+const RATINGS_KEY = 'unblocked_games_ratings_v2';
 
 export function useGames() {
   const [games, setGames] = useState(() => {
@@ -12,7 +12,7 @@ export function useGames() {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) {
+        if (Array.isArray(parsed)) {
           return parsed;
         }
       }
@@ -25,18 +25,18 @@ export function useGames() {
   const [favorites, setFavorites] = useState(() => {
     try {
       const saved = localStorage.getItem(FAVORITES_KEY);
-      return saved ? JSON.parse(saved) : ['snake-retro', 'game-2048', 'space-invaders'];
+      return saved ? JSON.parse(saved) : [];
     } catch {
-      return ['snake-retro', 'game-2048', 'space-invaders'];
+      return [];
     }
   });
 
   const [recentIds, setRecentIds] = useState(() => {
     try {
       const saved = localStorage.getItem(RECENTS_KEY);
-      return saved ? JSON.parse(saved) : ['snake-retro', 'game-2048'];
+      return saved ? JSON.parse(saved) : [];
     } catch {
-      return ['snake-retro', 'game-2048'];
+      return [];
     }
   });
 
