@@ -5,15 +5,14 @@ import { Header } from './components/Header';
 import { CategoryFilter } from './components/CategoryFilter';
 import { GameCard } from './components/GameCard';
 import { GamePlayer } from './components/GamePlayer';
-import { AddGameModal } from './components/AddGameModal';
 import { JsonManagerModal } from './components/JsonManagerModal';
 import { TabCloakModal } from './components/TabCloakModal';
 import { PanicScreen } from './components/PanicScreen';
+import { GameThumbnail } from './components/GameThumbnail';
 import {
   Gamepad2,
   Shield,
   Search,
-  Plus,
   Clock
 } from 'lucide-react';
 
@@ -35,7 +34,6 @@ export default function App() {
     userRatings,
     rateGame,
     recordPlay,
-    addGame,
     importGamesJson,
     exportGamesJson,
     resetToDefaults,
@@ -53,7 +51,6 @@ export default function App() {
     updatePanicKey
   } = useCloak();
 
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isJsonModalOpen, setIsJsonModalOpen] = useState(false);
   const [isCloakModalOpen, setIsCloakModalOpen] = useState(false);
 
@@ -78,7 +75,6 @@ export default function App() {
       <Header
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
-        onOpenAddModal={() => setIsAddModalOpen(true)}
         onOpenCloakModal={() => setIsCloakModalOpen(true)}
         onTriggerPanic={triggerPanic}
         panicKey={panicKey}
@@ -118,7 +114,14 @@ export default function App() {
                       onClick={() => handleSelectGame(g)}
                       className="group bg-[#161920] hover:bg-[#1D2129] border border-white/5 hover:border-indigo-500/40 rounded-2xl p-3 cursor-pointer transition-all flex items-center gap-3 shadow-md"
                     >
-                      <span className="text-2xl group-hover:scale-110 transition-transform">{g.thumbnail}</span>
+                      <div className="w-8 h-8 rounded-lg overflow-hidden shrink-0 bg-black/40 border border-white/10 flex items-center justify-center">
+                        <GameThumbnail
+                          thumbnail={g.thumbnail}
+                          alt={g.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform"
+                          emojiClassName="text-xl"
+                        />
+                      </div>
                       <div className="overflow-hidden">
                         <h3 className="font-bold text-xs text-white group-hover:text-indigo-400 truncate">
                           {g.title}
@@ -161,27 +164,20 @@ export default function App() {
                   <h3 className="text-base font-bold text-white">No games found</h3>
                   <p className="text-xs text-gray-400 max-w-sm mx-auto">
                     {searchQuery
-                      ? `No games matching "${searchQuery}". Try a different keyword or add your own custom game.`
-                      : 'No games in this category yet.'}
+                      ? `No games matching "${searchQuery}".`
+                      : 'No games available in this category.'}
                   </p>
                 </div>
-                <div className="flex items-center justify-center gap-3 pt-2">
-                  {searchQuery && (
+                {searchQuery && (
+                  <div className="flex items-center justify-center gap-3 pt-2">
                     <button
                       onClick={() => setSearchQuery('')}
                       className="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-200 text-xs font-bold transition-all cursor-pointer"
                     >
                       Clear Search
                     </button>
-                  )}
-                  <button
-                    onClick={() => setIsAddModalOpen(true)}
-                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-extrabold transition-all shadow-lg shadow-indigo-600/30 cursor-pointer"
-                  >
-                    <Plus className="w-4 h-4 stroke-[3]" />
-                    <span>Add Custom Game</span>
-                  </button>
-                </div>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -206,24 +202,11 @@ export default function App() {
               <Shield className="w-3.5 h-3.5 text-emerald-400" />
               <span>Tab Cloak</span>
             </button>
-            <button
-              onClick={() => setIsAddModalOpen(true)}
-              className="hover:text-indigo-400 transition-colors flex items-center gap-1.5 cursor-pointer"
-            >
-              <Plus className="w-3.5 h-3.5 text-indigo-400" />
-              <span>Add Game</span>
-            </button>
           </div>
         </div>
       </footer>
 
       {/* Modals */}
-      <AddGameModal
-        isOpen={isAddModalOpen}
-        onClose={() => setIsAddModalOpen(false)}
-        onAddGame={addGame}
-      />
-
       <JsonManagerModal
         isOpen={isJsonModalOpen}
         onClose={() => setIsJsonModalOpen(false)}

@@ -1,4 +1,5 @@
 import { Play, Star, Users } from 'lucide-react';
+import { GameThumbnail } from './GameThumbnail.jsx';
 
 export function GameCard({
   game,
@@ -41,10 +42,13 @@ export function GameCard({
         {/* Glow backdrop */}
         <div className="absolute inset-0 bg-radial from-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-        {/* Emoji / Icon Display */}
-        <div className="text-5xl filter drop-shadow-lg transform transition-transform group-hover:scale-115">
-          {game.thumbnail}
-        </div>
+        {/* Thumbnail / Cover Art */}
+        <GameThumbnail
+          thumbnail={game.thumbnail}
+          alt={game.title}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          emojiClassName="text-5xl filter drop-shadow-lg transform transition-transform group-hover:scale-115"
+        />
 
         {/* Play Overlay */}
         <div className="absolute inset-0 bg-[#0F1115]/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">

@@ -12,6 +12,7 @@ import {
   Check,
   Tag
 } from 'lucide-react';
+import { GameThumbnail } from './GameThumbnail.jsx';
 
 export function GamePlayer({
   game,
@@ -118,7 +119,14 @@ export function GamePlayer({
           <div className="h-4 w-[1px] bg-white/10" />
           <div>
             <h1 className="font-extrabold text-white text-base flex items-center gap-2">
-              <span>{game.thumbnail}</span>
+              <div className="w-7 h-7 rounded-lg overflow-hidden shrink-0 flex items-center justify-center bg-white/5 border border-white/10">
+                <GameThumbnail
+                  thumbnail={game.thumbnail}
+                  alt={game.title}
+                  className="w-full h-full object-cover"
+                  emojiClassName="text-lg"
+                />
+              </div>
               <span>{game.title}</span>
               <span className="text-[10px] px-2 py-0.5 rounded-md font-bold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
                 {game.category}
@@ -314,11 +322,18 @@ export function GamePlayer({
               <div
                 key={rel.id}
                 onClick={() => onSelectGame(rel)}
-                className="bg-[#161920] hover:bg-[#1D2129] border border-white/5 hover:border-indigo-500/40 rounded-xl p-3 cursor-pointer transition-all flex items-center gap-3 shadow-md"
+                className="bg-[#161920] hover:bg-[#1D2129] border border-white/5 hover:border-indigo-500/40 rounded-xl p-2.5 cursor-pointer transition-all flex items-center gap-3 shadow-md group"
               >
-                <span className="text-2xl">{rel.thumbnail}</span>
+                <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-black/40 border border-white/10 flex items-center justify-center">
+                  <GameThumbnail
+                    thumbnail={rel.thumbnail}
+                    alt={rel.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform"
+                    emojiClassName="text-xl"
+                  />
+                </div>
                 <div className="overflow-hidden">
-                  <h4 className="font-bold text-xs text-white truncate">{rel.title}</h4>
+                  <h4 className="font-bold text-xs text-white group-hover:text-indigo-400 truncate">{rel.title}</h4>
                   <span className="text-[10px] text-gray-400 capitalize">{rel.category}</span>
                 </div>
               </div>

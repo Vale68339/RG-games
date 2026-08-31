@@ -4,7 +4,6 @@ import {
   Search,
   AlertOctagon,
   Shield,
-  Plus,
   X,
   Users,
   Menu
@@ -13,7 +12,6 @@ import {
 export function Header({
   searchQuery,
   onSearchChange,
-  onOpenAddModal,
   onOpenCloakModal,
   onTriggerPanic,
   panicKey,
@@ -122,17 +120,6 @@ export function Header({
           >
             <Shield className="w-4 h-4 text-emerald-400" />
             <span className="hidden sm:inline">Cloak</span>
-          </button>
-
-          {/* Add Game Button */}
-          <button
-            id="add-game-modal-button"
-            onClick={onOpenAddModal}
-            title="Add Custom Iframe Game"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition-all shadow-lg shadow-indigo-600/30 active:scale-95 cursor-pointer"
-          >
-            <Plus className="w-4 h-4 stroke-[3]" />
-            <span className="hidden sm:inline">Add Game</span>
           </button>
         </div>
       </div>
