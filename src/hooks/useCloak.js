@@ -5,49 +5,49 @@ export const CLOAK_PRESETS = [
     id: 'default',
     name: 'Default Portal',
     title: 'RG Games',
-    favicon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕹️</text></svg>',
+    favicon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%234f46e5"/><text x="50%" y="55%" font-size="52" text-anchor="middle" dominant-baseline="middle">🕹️</text></svg>',
     iconName: 'Gamepad2'
   },
   {
     id: 'google-docs',
     name: 'Google Docs',
     title: 'Untitled document - Google Docs',
-    favicon: 'https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico',
+    favicon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%234285f4"/><path d="M18 16h20l12 12v22a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2V18a2 2 0 0 1 2-2z" fill="%23fff"/><path d="M38 16v12h12z" fill="%23c2e7ff"/><path d="M24 32h16v3H24zm0 6h16v3H24zm0 6h10v3H24z" fill="%234285f4"/></svg>',
     iconName: 'FileText'
   },
   {
     id: 'google-classroom',
     name: 'Google Classroom',
     title: 'Classes - Google Classroom',
-    favicon: 'https://ssl.gstatic.com/classroom/favicon.png',
+    favicon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%23137333"/><rect x="8" y="12" width="48" height="40" rx="6" fill="%23f9ab00"/><rect x="12" y="16" width="40" height="32" rx="4" fill="%231e8e3e"/><circle cx="32" cy="28" r="6" fill="%23fff"/><path d="M22 42c0-5 5-8 10-8s10 3 10 8z" fill="%23fff"/></svg>',
     iconName: 'GraduationCap'
   },
   {
     id: 'google-drive',
     name: 'Google Drive',
     title: 'My Drive - Google Drive',
-    favicon: 'https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png',
+    favicon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%23ffffff"/><polygon points="24,14 40,14 54,38 38,38" fill="%23f4b400"/><polygon points="10,38 24,14 38,38 24,62" fill="%230f9d58"/><polygon points="24,62 38,38 54,38 40,62" fill="%234285f4"/></svg>',
     iconName: 'HardDrive'
   },
   {
     id: 'canvas',
     name: 'Canvas LMS',
     title: 'Dashboard | Canvas',
-    favicon: 'https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico',
+    favicon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="%23e13f2b"/><circle cx="32" cy="32" r="14" fill="%23ffffff"/><circle cx="32" cy="32" r="8" fill="%23e13f2b"/></svg>',
     iconName: 'BookOpen'
   },
   {
     id: 'desmos',
     name: 'Desmos Calculator',
     title: 'Desmos | Graphing Calculator',
-    favicon: 'https://www.desmos.com/favicon.ico',
+    favicon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%23187a41"/><path d="M14 44c10 0 12-24 18-24s8 24 18 24" stroke="%23ffffff" stroke-width="6" fill="none" stroke-linecap="round"/></svg>',
     iconName: 'Calculator'
   },
   {
     id: 'wikipedia',
     name: 'Wikipedia',
     title: 'Wikipedia, the free encyclopedia',
-    favicon: 'https://en.wikipedia.org/static/favicon/wikipedia.ico',
+    favicon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%23ffffff"/><text x="50%" y="68%" font-family="serif" font-weight="bold" font-size="44" fill="%23000000" text-anchor="middle">W</text></svg>',
     iconName: 'Globe'
   }
 ];
