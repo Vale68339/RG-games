@@ -1,8 +1,7 @@
 import {
   Flame,
   Sparkles,
-  Star,
-  ArrowUpDown
+  Star
 } from 'lucide-react';
 
 const CATEGORY_ITEMS = [
@@ -14,9 +13,7 @@ const CATEGORY_ITEMS = [
 export function CategoryFilter({
   selectedCategory,
   onSelectCategory,
-  categoriesWithCounts,
-  sortBy,
-  onSortChange
+  categoriesWithCounts
 }) {
   return (
     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 py-2">
@@ -50,22 +47,6 @@ export function CategoryFilter({
             </button>
           );
         })}
-      </div>
-
-      {/* Sort Select */}
-      <div className="flex items-center gap-2 self-end sm:self-center shrink-0">
-        <ArrowUpDown className="w-3.5 h-3.5 text-gray-400" />
-        <select
-          id="sort-games-select"
-          value={sortBy}
-          onChange={e => onSortChange(e.target.value)}
-          className="bg-[#161920] border border-white/10 text-gray-200 text-xs font-semibold rounded-xl px-3 py-2 focus:outline-none focus:border-indigo-500 cursor-pointer"
-        >
-          <option value="popular">Most Popular</option>
-          <option value="rating">Highest Rated</option>
-          <option value="title">Alphabetical (A-Z)</option>
-          <option value="newest">Recently Added</option>
-        </select>
       </div>
     </div>
   );

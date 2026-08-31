@@ -131,13 +131,11 @@ export default function App() {
               </div>
             )}
 
-            {/* Category & Sorting Controls */}
+            {/* Category Controls */}
             <CategoryFilter
               selectedCategory={selectedCategory}
               onSelectCategory={setSelectedCategory}
               categoriesWithCounts={categoriesWithCounts}
-              sortBy={sortBy}
-              onSortChange={setSortBy}
             />
 
             {/* Games Grid */}
