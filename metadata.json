@@ -1,0 +1,7 @@
+{
+  "name": "RG Games",
+  "description": "A fast, lightweight unblocked games hub with iframe-powered HTML5 games stored in a customizable JSON catalog.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
